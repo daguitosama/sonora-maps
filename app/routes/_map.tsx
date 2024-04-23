@@ -19,10 +19,10 @@ export default function MapLayout() {
     return (
         <div>
             <div className={"min-h-screen  transition-colors duration-200 " + dynamic_bg_color}>
-                <Navigation />
-                <div className='mt-10 px-[30px] max-w-screen-xl mx-auto'>
-                    <Outlet />
+                <div className='px-[30px] max-w-screen-xl mx-auto relative'>
+                    <Navigation />
                 </div>
+                <Outlet />
             </div>
         </div>
     );
@@ -30,14 +30,16 @@ export default function MapLayout() {
 
 function Navigation() {
     const base_link_classes =
-        "bg-white  text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 ";
+        "bg-white  text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 rounded-md ";
     return (
-        <div className='px-[30px] max-w-screen-xl pt-8'>
+        <div className='px-[30px] max-w-screen-xl pt-4 absolute left-0 top-0'>
             <Menu
                 as='div'
                 className='relative'
             >
-                <Menu.Button className='py-2 px-3 text-md bg-white rounded-md'>Menú</Menu.Button>
+                <Menu.Button className='py-2 px-3 text-md bg-white rounded-md shadow-md'>
+                    Menú
+                </Menu.Button>
                 <Menu.Items className='absolute left-0 mt-2 p-1 flex flex-col  origin-top-right  rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none'>
                     <Menu.Item>
                         <NavLink
