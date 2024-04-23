@@ -1,9 +1,10 @@
 import { NavLink, Outlet, useLocation } from "@remix-run/react";
+import { Menu } from "@headlessui/react";
 
 export default function MapLayout() {
     const location = useLocation();
     const background_color_for_routes = {
-        doctorados: "bg-[#D08447]",
+        doctorados: "bg-[#DC7F37]",
         maestrias: "bg-[#AB4E49]",
         especialidades: "bg-[#8F3740]",
     };
@@ -29,40 +30,61 @@ export default function MapLayout() {
 
 function Navigation() {
     const base_link_classes =
-        "text-white text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 ";
+        "bg-white  text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 ";
     return (
-        <div className='w-full flex items-center justify-center p-2 md:py-4 gap-2 md:gap-3'>
-            <NavLink
-                to='/'
-                className={({ isActive }) =>
-                    isActive
-                        ? "ring-2 ring-white " + base_link_classes + "bg-[#CF8548]"
-                        : base_link_classes + "bg-[#CF8548]"
-                }
+        <div className='px-[30px] max-w-screen-xl pt-8'>
+            <Menu
+                as='div'
+                className='relative'
             >
-                Doctorados
-            </NavLink>
-            <NavLink
-                to='/maestrias'
-                className={({ isActive }) =>
-                    isActive
-                        ? "ring-2 ring-white " + base_link_classes + "bg-[#AB4E4A]"
-                        : base_link_classes + "bg-[#AB4E4A]"
-                }
-            >
-                Maestrías
-            </NavLink>
+                <Menu.Button className='py-2 px-3 text-md bg-white rounded-md'>Menú</Menu.Button>
+                <Menu.Items className='absolute left-0 mt-2 p-1 flex flex-col  origin-top-right  rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none'>
+                    <Menu.Item>
+                        <NavLink
+                            to='/'
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "ring-2 ring-white text-white " +
+                                      base_link_classes +
+                                      "bg-black"
+                                    : base_link_classes + "text-black "
+                            }
+                        >
+                            Doctorados
+                        </NavLink>
+                    </Menu.Item>
 
-            <NavLink
-                to='/especialidades'
-                className={({ isActive }) =>
-                    isActive
-                        ? "ring-2 ring-white " + base_link_classes + "bg-[#8F3641]"
-                        : base_link_classes + "bg-[#8F3641]"
-                }
-            >
-                Especialidades
-            </NavLink>
+                    <Menu.Item>
+                        <NavLink
+                            to='/maestrias'
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "ring-2 ring-white text-white  " +
+                                      base_link_classes +
+                                      "bg-black"
+                                    : base_link_classes + "text-black"
+                            }
+                        >
+                            Maestrías
+                        </NavLink>
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <NavLink
+                            to='/especialidades'
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "ring-2 ring-white text-white  " +
+                                      base_link_classes +
+                                      "bg-black"
+                                    : base_link_classes + "text-black"
+                            }
+                        >
+                            Especialidades
+                        </NavLink>
+                    </Menu.Item>
+                </Menu.Items>
+            </Menu>
         </div>
     );
 }
