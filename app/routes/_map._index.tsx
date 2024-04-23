@@ -1,4 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Map_Page } from "~/components/map_page/MapPage";
+import { Doctorados_Data } from "~/components/map_page/db";
 
 export const meta: MetaFunction = () => {
     return [
@@ -11,24 +13,5 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-    return (
-        <div className=''>
-            <div className='flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0'>
-                <div>
-                    <img
-                        src='/sample-data.png'
-                        className=''
-                        alt=''
-                    />
-                </div>
-                <div className='max-h-screen'>
-                    <img
-                        src='/sample-map.png'
-                        className=''
-                        alt=''
-                    />
-                </div>
-            </div>
-        </div>
-    );
+    return <Map_Page data={Doctorados_Data} />;
 }

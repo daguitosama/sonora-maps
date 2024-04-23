@@ -1,8 +1,10 @@
 ## Todos
 
 -   [] Make Map & Data layout
-    -   [] Enforce horizontal viewport on mobile by asking to turn side ways on mobile
     -   [x] Drop down for navigation
+    -   [x] Mobile variant at the vertical line
+    -   [x] Non Mobile variant at the horizontal
     -   [] Title for Page
+    -   [] Page Data Spec & Instantiation
     -   [] Data Component
     -   [] Map Component
