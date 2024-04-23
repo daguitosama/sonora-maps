@@ -19,7 +19,7 @@ export default function MapLayout() {
     return (
         <div>
             <div className={"min-h-screen  transition-colors duration-200 " + dynamic_bg_color}>
-                <div className='px-[30px] max-w-screen-xl mx-auto relative'>
+                <div className='relative'>
                     <Navigation />
                 </div>
                 <Outlet />
@@ -30,7 +30,7 @@ export default function MapLayout() {
 
 function Navigation() {
     const base_link_classes =
-        "bg-white  text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 rounded-md ";
+        "text-black text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 rounded-md ";
     return (
         <div className='px-[30px] max-w-screen-xl pt-4 absolute left-0 top-0'>
             <Menu
@@ -46,10 +46,8 @@ function Navigation() {
                             to='/'
                             className={({ isActive }) =>
                                 isActive
-                                    ? "ring-2 ring-white text-white " +
-                                      base_link_classes +
-                                      "bg-black"
-                                    : base_link_classes + "text-black "
+                                    ? base_link_classes + "ring-2 ring-white text-white bg-black "
+                                    : base_link_classes + " "
                             }
                         >
                             Doctorados
