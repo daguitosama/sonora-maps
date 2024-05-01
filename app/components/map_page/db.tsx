@@ -74,6 +74,15 @@ export const Doctorados_Data: Map_Page_Data = {
                         egress: 14,
                     },
                 },
+                {
+                    id: "1",
+                    title: "DOCTORADO EN CIENCIAS DE LA INGENIERÍA",
+                    totals: {
+                        enrollment: 15,
+                        entitlements: 2,
+                        egress: 2,
+                    },
+                },
             ],
         },
     ],

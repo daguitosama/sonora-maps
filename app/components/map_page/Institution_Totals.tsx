@@ -7,7 +7,7 @@ export function Institution_Totals({ institution }: Institution_Totals_Props) {
     const { totals, totals_note } = institution;
     return (
         <div className='px-[30px] w-full overflow-x-auto whitespace-nowrap'>
-            <div className='grid grid-cols-8 gap-3 min-w-[600px]'>
+            <div className='grid grid-cols-8 gap-3 min-w-[600px] whitespace-normal'>
                 {/* first column */}
                 <div className='col-span-2 grid gap-2'>
                     <div className='max-w-[12rem] text-wrap'>

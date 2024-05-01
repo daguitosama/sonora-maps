@@ -1,3 +1,4 @@
+import { Courses_Board } from "./Courses_Board";
 import { Institution_Heading } from "./Institution_Heading";
 import { Institution_Totals } from "./Institution_Totals";
 import { Map_Page_Props } from "./MapPage";
@@ -50,9 +51,18 @@ interface Institution_Card_Props {
 }
 function Institution_Card({ institution }: Institution_Card_Props) {
     return (
-        <div className='grid gap-3'>
-            <Institution_Heading institution={institution} />
-            <Institution_Totals institution={institution} />
+        <div className=''>
+            <div>
+                <Institution_Heading institution={institution} />
+            </div>
+
+            <div className='mt-2'>
+                <Institution_Totals institution={institution} />
+            </div>
+
+            <div className='mt-2'>
+                <Courses_Board institution={institution} />
+            </div>
         </div>
     );
 }
