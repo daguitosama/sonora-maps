@@ -1,24 +1,10 @@
-import { NavLink, Outlet, useLocation } from "@remix-run/react";
+import { NavLink, Outlet } from "@remix-run/react";
 import { Menu } from "@headlessui/react";
 
 export default function MapLayout() {
-    const location = useLocation();
-    const background_color_for_routes = {
-        doctorados: "bg-[#DC7F37]",
-        maestrias: "bg-[#AB4E49]",
-        especialidades: "bg-[#8F3740]",
-    };
-    let dynamic_bg_color: string =
-        background_color_for_routes.doctorados; /* default  for `/` (doctorados route)*/
-    if (location.pathname == "/maestrias") {
-        dynamic_bg_color = background_color_for_routes.maestrias;
-    }
-    if (location.pathname == "/especialidades") {
-        dynamic_bg_color = background_color_for_routes.especialidades;
-    }
     return (
         <div>
-            <div className={"min-h-screen  transition-colors duration-200 " + dynamic_bg_color}>
+            <div className=''>
                 <div className='relative'>
                     <Navigation />
                 </div>
@@ -50,37 +36,22 @@ function Navigation() {
                                     : base_link_classes + " "
                             }
                         >
+                            Home
+                        </NavLink>
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <NavLink
+                            to='/doctorados/sonora/'
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "ring-2 ring-white text-white  " +
+                                      base_link_classes +
+                                      "bg-black"
+                                    : base_link_classes + "text-black"
+                            }
+                        >
                             Doctorados
-                        </NavLink>
-                    </Menu.Item>
-
-                    <Menu.Item>
-                        <NavLink
-                            to='/maestrias'
-                            className={({ isActive }) =>
-                                isActive
-                                    ? "ring-2 ring-white text-white  " +
-                                      base_link_classes +
-                                      "bg-black"
-                                    : base_link_classes + "text-black"
-                            }
-                        >
-                            Maestrías
-                        </NavLink>
-                    </Menu.Item>
-
-                    <Menu.Item>
-                        <NavLink
-                            to='/especialidades'
-                            className={({ isActive }) =>
-                                isActive
-                                    ? "ring-2 ring-white text-white  " +
-                                      base_link_classes +
-                                      "bg-black"
-                                    : base_link_classes + "text-black"
-                            }
-                        >
-                            Especialidades
                         </NavLink>
                     </Menu.Item>
                 </Menu.Items>

@@ -1,21 +1,10 @@
-## See it live
+# Tasks
 
-[Demo](https://sonora-map-l7d.pages.dev/)
+-   [] Data Board
+    -   [] Redesign
+        -   [x] Heading
+        -   [ ] Institution Totals
 
-## Deployment
+## Notes
 
-Serve the static assets of the `/build/client` on your server of choice
-
-## Development
-
-Install deps:
-
-```shellscript
-npm install
-```
-
-Run dev:
-
-```shellscript
-npm run dev
-```
+-   zoom lib https://github.com/BetterTyped/react-zoom-pan-pinch

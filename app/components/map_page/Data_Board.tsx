@@ -1,8 +1,8 @@
-import { Courses_Board } from "./Courses_Board";
-import { Institution_Heading } from "./Institution_Heading";
-import { Institution_Totals } from "./Institution_Totals";
+import { Courses_Board } from "../InstitutionCoursesBoard";
+import { Institution_Heading } from "./InstitutionHeading";
+import { Institution_Totals } from "../InstitutionTotals";
 import { Map_Page_Props } from "./MapPage";
-import { Institution } from "./db";
+import { Institution } from "../../lib/db/db";
 
 //
 export function Data_Board({ data }: Map_Page_Props) {
@@ -16,7 +16,7 @@ export function Data_Board({ data }: Map_Page_Props) {
                 <div className='px-[30px]'>
                     {/* title */}
                     <div className='p-2 border-4 border-white inline-block'>
-                        <h1 className='text-xl '>{title}</h1>
+                        <h1 className='text-xl'>{title}</h1>
                     </div>
                 </div>
 
@@ -34,6 +34,7 @@ function Courses({ data }: Map_Page_Props) {
     return (
         <div>
             <ul>
+                {/* @ts-ignore */}
                 {institutions.map((institution) => {
                     return (
                         <li key={institution.name}>

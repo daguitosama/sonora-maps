@@ -1,6 +1,6 @@
 import { Data_Board } from "./Data_Board";
 import { Map_Board } from "./Map_Board";
-import { Map_Page_Data } from "./db";
+import { Map_Page_Data } from "../../lib/db/db";
 
 export interface Map_Page_Props {
     data: Map_Page_Data;
