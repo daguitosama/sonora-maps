@@ -8,7 +8,7 @@ export const DOCTORADOS: Program = {
             id: "0",
             slug: "sonora",
             name: "Universidad de Sonora, Campus Hermosillo",
-            logo_source: "/img/logos/IT_Hermosillo.png",
+            logo_source: "/img/logos/UNISON_sonora.png",
             map: "/img/maps/mapa-doctorados.svg", // "/img/maps/IT_Hermosillo.png", // "/img/maps/mapa-doctorados.svg",
             name_gradient: {
                 from: "#b46525d2",
