@@ -13,7 +13,7 @@ export function InstitutionCoursesBoard({ institution, className }: Courses_Boar
             <div className='absolute top-4 left-0 w-full py-2 px-[30px] bg-gradient-to-r from-[#000] via-[#2E2120]  to-transparent '>
                 <h2 className='uppercase font-light text-lg'>Ofertas de carreras</h2>
             </div>
-            <div className=' w-full '>
+            <div className=' w-full  '>
                 <div className='grid grid-cols-2 gap-2 w-full '>
                     <Carreras
                         institution={institution}
@@ -42,7 +42,7 @@ function Carreras({
 }: Carreras_Props) {
     const { courses } = institution;
     return (
-        <ul className='pt-20 px-[30px] grid  pb-20 border border-white'>
+        <ul className='pt-20 px-[30px] flex flex-col gap-3  pb-2 border border-white'>
             {courses.map((course, idx) => {
                 return (
                     <li key={course.id}>
@@ -82,7 +82,7 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
         max_number_of_courses_folks + Math.ceil(max_number_of_courses_folks * 0.3);
     //
     return (
-        <div className='pb-20 '>
+        <div className='pb-2 '>
             <div className='pt-20 pb-10 bg-[#EAD6C1] px-3'>
                 {/* matriculados */}
                 <div className='grid grid-cols-3 gap-3'>

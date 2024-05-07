@@ -21,7 +21,7 @@ export default function BoardData({
             />
             <InstitutionTotals
                 institution={institution}
-                className='mt-5'
+                className='mt-5 '
             />
             <InstitutionCoursesBoard
                 institution={institution}

@@ -15,15 +15,22 @@ export function InstitutionTotals({ institution, className }: Institution_Totals
                 <div className='max-w-[12rem] text-wrap'>
                     <p className='text-xs'> La vocación del instituto da acceso a:</p>
                 </div>
-                <div className=' text-black px-2 py-1 bg-gradient-to-r from-white via-white to-transparent flex items-center justify-center'>
-                    <p className='font-extrabold text-xl'>Local</p>
+                <div className='relative'>
+                    <img
+                        src='/img/buttons/local.png'
+                        alt='local'
+                        className='w-full h-full absolute inset-0 object-cover'
+                    />
                 </div>
 
                 <Link
                     to='#'
-                    className=' text-black  px-2 py-1  bg-white flex items-center justify-center'
+                    className=' '
                 >
-                    <p className='font-extrabold text-xl'>Nacional</p>
+                    <img
+                        src='/img/buttons/nacional.png'
+                        alt='nacional'
+                    />
                 </Link>
             </div>
 
