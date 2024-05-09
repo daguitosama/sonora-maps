@@ -13,20 +13,22 @@ export default function BoardData({
     course: Course;
 }) {
     return (
-        <div className='h-[50vh] sm:h-[100vh] sm:w-[45vw] text-white font-bold  overflow-x-scroll shadow-2xl border border-l border-black/10'>
-            <ProgramHeader title={program.title} />
-            <InstitutionHeading
-                institution={institution}
-                className='mt-2'
-            />
-            <InstitutionTotals
-                institution={institution}
-                className='mt-5 '
-            />
-            <InstitutionCoursesBoard
-                institution={institution}
-                className='mt-5'
-            />
+        <div className='h-[50vh] sm:h-[100vh] sm:w-[45vw] text-white font-bold  shadow-2xl border border-l border-black/10'>
+            <div className='lg:w-[500px] lg:mx-auto'>
+                <ProgramHeader title={program.title} />
+                <InstitutionHeading
+                    institution={institution}
+                    className='mt-2'
+                />
+                <InstitutionTotals
+                    institution={institution}
+                    className='mt-5 '
+                />
+                <InstitutionCoursesBoard
+                    institution={institution}
+                    className='mt-5'
+                />
+            </div>
         </div>
     );
 }
