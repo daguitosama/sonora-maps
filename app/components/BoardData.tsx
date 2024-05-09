@@ -13,7 +13,7 @@ export default function BoardData({
     course: Course;
 }) {
     return (
-        <div className='h-[50vh] sm:h-[100vh] sm:w-[45vw] text-white font-bold  shadow-2xl border border-l border-black/10'>
+        <div className='h-[50vh] sm:h-[100vh] sm:w-[45vw] text-white font-bold overflow-y-scroll  shadow-2xl border border-l border-black/10'>
             <div className='lg:w-[500px] lg:mx-auto'>
                 <ProgramHeader title={program.title} />
                 <InstitutionHeading
