@@ -10,8 +10,8 @@ export function InstitutionCoursesBoard({ institution, className }: Courses_Boar
 
     return (
         <div className={"relative " + className}>
-            <div className='absolute top-4 left-0 w-full py-2 px-[30px] bg-gradient-to-r from-[#000] via-[#2E2120]  to-transparent '>
-                <h2 className='uppercase font-light text-lg'>Ofertas de carreras</h2>
+            <div className='absolute top-2 left-0 w-full py-2 px-[30px] bg-gradient-to-r from-[#000] via-[#2E2120]  to-transparent '>
+                <h2 className='uppercase font-light'>Ofertas de carreras</h2>
             </div>
             <div className=' w-full  '>
                 <div className='grid grid-cols-2 gap-2 w-full '>
@@ -42,24 +42,18 @@ function Carreras({
 }: Carreras_Props) {
     const { courses } = institution;
     return (
-        <ul className='pt-20 px-[30px] flex flex-col gap-3  pb-2 border border-white'>
+        <ul className='pt-14 px-[10px] flex flex-col gap-3  pb-2 border border-white'>
             {courses.map((course, idx) => {
                 return (
                     <li key={course.id}>
                         <button
-                            className={"flex items-center gap-2 ".concat(
-                                selected_idx == idx ? "underline" : ""
-                            )}
+                            className={" ".concat(selected_idx == idx ? "underline" : "")}
                             onClick={() => {
                                 set_selected_idx(idx);
-                                // console.log("selecting idx: ", idx);
                             }}
                         >
-                            <div className='bg-black text-white text-lg font-bold px-2 py-1 flex items-center gap-1 '>
-                                <span>{idx + 1}</span> <span>.</span>
-                            </div>
                             <div>
-                                <p className='text-start uppercase'>{course.title}</p>
+                                <p className='text-xs text-start uppercase'>{course.title}</p>
                             </div>
                         </button>
                     </li>
@@ -83,9 +77,9 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
     //
     return (
         <div className='pb-2 '>
-            <div className='pt-20 pb-10 bg-[#EAD6C1] px-3'>
+            <div className='pt-14 pb-10 bg-[#EAD6C1] px-2 flex flex-col gap-2'>
                 {/* matriculados */}
-                <div className='grid grid-cols-3 gap-3'>
+                <div className=''>
                     <div className='text-black flex flex-col items-center col-span-1 '>
                         <p className='font-bold'>{current_course.totals.enrollment}</p>
                         <p className='font-light text-sm'>Matriculados</p>
@@ -105,7 +99,7 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
                     </div>
                 </div>
                 {/* titulados */}
-                <div className='grid grid-cols-3 gap-3'>
+                <div className=''>
                     <div className='text-black flex flex-col items-center col-span-1 '>
                         <p className='font-bold'>{current_course.totals.entitlements}</p>
                         <p className='font-light text-sm'>Titulados</p>
@@ -125,7 +119,7 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
                     </div>
                 </div>
                 {/* egresados */}
-                <div className='grid grid-cols-3 gap-3'>
+                <div className=''>
                     <div className='text-black flex flex-col items-center col-span-1 '>
                         <p className='font-bold'>{current_course.totals.egress}</p>
                         <p className='font-light text-sm'>Egresados</p>

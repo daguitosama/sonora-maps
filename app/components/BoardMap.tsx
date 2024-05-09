@@ -33,7 +33,7 @@ export default function BoardMap({ map_svg_src }: { map_svg_src: string }) {
             <TransformWrapper
                 initialScale={2.5}
                 initialPositionY={-400}
-                initialPositionX={-200}
+                initialPositionX={-400}
             >
                 {(utils) => (
                     <Fragment>

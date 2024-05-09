@@ -7,49 +7,40 @@ interface Institution_Totals_Props {
 }
 export function InstitutionTotals({ institution, className }: Institution_Totals_Props) {
     return (
-        <div
-            className={"px-[30px] w-full overflow-x-auto whitespace-nowrap space-y-4 " + className}
-        >
+        <div className={"px-[10px] w-full overflow-x-auto whitespace-nowrap  " + className}>
             {/* first row */}
-            <div className=' grid grid-cols-3 gap-2'>
-                <div className='max-w-[12rem] text-wrap'>
-                    <p className='text-xs'> La vocación del instituto da acceso a:</p>
+            <div className=' flex items-center justify-between gap-[10px] py-[5px]'>
+                <div className=' text-wrap w-[124px]'>
+                    <p className='text-xs font-extrabold'>La vocación del instituto da acceso a:</p>
                 </div>
-                <div className='relative'>
-                    <img
-                        src='/img/buttons/local.png'
-                        alt='local'
-                        className='w-full h-full absolute inset-0 object-cover'
-                    />
+                <div className=' w-[82px] h-[28px] flex items-center justify-center text-black px-2 py-1 bg-white  '>
+                    <p className='font-bold'>Local</p>
                 </div>
 
                 <Link
                     to='#'
-                    className=' '
+                    className=' w-[82px] h-[28px] flex items-center justify-center text-black  px-2 py-1  bg-white '
                 >
-                    <img
-                        src='/img/buttons/nacional.png'
-                        alt='nacional'
-                    />
+                    <p className='font-bold'>Nacional</p>
                 </Link>
             </div>
 
             {/* matriculados */}
-            <div className=' grid grid-cols-3 gap-2'>
-                <div className=' py-2'>
-                    <p className='uppercase text-xl font-bold font-futura'> Matriculados</p>
+            <div className='flex items-center justify-between gap-[10px] py-[5px]'>
+                <div className='w-[124px]'>
+                    <p className='uppercase text-sm font-bold '> Matriculados</p>
                 </div>
 
-                <div className=' bg-[#994A4C] rounded-md flex items-center justify-center py-2'>
-                    <p className='font-extrabold text-xl'>
+                <div className=' bg-[#994A4C] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
+                    <p className='font-bold'>
                         {institution.totals.local.enrollment
                             ? institution.totals.local.enrollment
                             : "-"}
                     </p>
                 </div>
 
-                <div className=' bg-[#7F2A51] rounded-md flex items-center justify-center py-2'>
-                    <p className='font-extrabold text-xl'>
+                <div className=' bg-[#7F2A51] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
+                    <p className='font-bold'>
                         {institution.totals.national.enrollment
                             ? institution.totals.national.enrollment
                             : "-"}
@@ -57,22 +48,22 @@ export function InstitutionTotals({ institution, className }: Institution_Totals
                 </div>
             </div>
 
-            {/* matriculados */}
-            <div className=' grid grid-cols-3 gap-2'>
-                <div className=' py-2'>
-                    <p className='uppercase text-xl font-bold font-futura'> Titulados</p>
+            {/* titulados */}
+            <div className='flex items-center justify-between gap-[10px] py-[5px]'>
+                <div className='w-[124px]'>
+                    <p className='uppercase  font-bold '> Titulados</p>
                 </div>
 
-                <div className=' bg-[#D7985A] rounded-md flex items-center justify-center py-2'>
-                    <p className='font-extrabold text-xl'>
+                <div className=' bg-[#D7985A] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
+                    <p className='font-bold'>
                         {institution.totals.local.entitlements
                             ? institution.totals.local.entitlements
                             : "-"}
                     </p>
                 </div>
 
-                <div className=' bg-[#E4A460] rounded-md flex items-center justify-center py-2'>
-                    <p className='font-extrabold text-xl'>
+                <div className=' bg-[#E4A460] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
+                    <p className='font-bold'>
                         {institution.totals.national.entitlements
                             ? institution.totals.national.entitlements
                             : "-"}
@@ -81,19 +72,19 @@ export function InstitutionTotals({ institution, className }: Institution_Totals
             </div>
 
             {/* egresados */}
-            <div className=' grid grid-cols-3 gap-2'>
-                <div className=' py-2'>
-                    <p className='uppercase text-xl font-bold font-futura'> Egresados</p>
+            <div className='flex items-center justify-between gap-[10px] py-[5px]'>
+                <div className='w-[124px]'>
+                    <p className='uppercase font-bold'> Egresados</p>
                 </div>
 
-                <div className=' bg-[#B19880] rounded-md flex items-center justify-center py-2'>
-                    <p className='font-extrabold text-xl'>
+                <div className=' bg-[#B19880] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
+                    <p className='font-bold'>
                         {institution.totals.local.egress ? institution.totals.local.egress : "-"}
                     </p>
                 </div>
 
-                <div className=' bg-[#A7A5A6] rounded-md flex items-center justify-center py-2'>
-                    <p className='font-extrabold text-xl'>
+                <div className=' bg-[#A7A5A6] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
+                    <p className='font-bold'>
                         {institution.totals.national.egress
                             ? institution.totals.national.egress
                             : "-"}

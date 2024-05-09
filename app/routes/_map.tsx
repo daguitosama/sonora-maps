@@ -18,7 +18,7 @@ function Navigation() {
     const base_link_classes =
         "text-black text-sm md:text-base leading-none p-2 uppercase  transition-all duration-200 rounded-md ";
     return (
-        <div className='px-[30px] max-w-screen-xl pt-4 absolute left-0 top-0 z-30'>
+        <div className='px-[10px] max-w-screen-xl pt-4 absolute left-0 top-0 z-30'>
             <Menu
                 as='div'
                 className='relative'

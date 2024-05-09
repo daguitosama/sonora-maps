@@ -16,7 +16,7 @@ export function InstitutionHeading({
             style={{
                 backgroundImage: `linear-gradient( to right, ${from}, ${to} )`,
             }}
-            className={"flex items-center justify-start gap-6 px-[30px] " + className}
+            className={"flex items-center justify-start gap-2 px-[10px] " + className}
         >
             <div>
                 <div className='w-[70px] h-[70px] rounded-full block relative'>
