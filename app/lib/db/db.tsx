@@ -39,6 +39,7 @@ export interface Program {
     title: string;
     bg_color: string;
     map: JSX.Element;
+    national_map: JSX.Element;
     totals: {
         national: { enrollment: number; entitlements: number; egress: number };
         local: {

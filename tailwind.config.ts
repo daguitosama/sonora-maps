@@ -10,7 +10,7 @@ export default {
                 futura: ["Futura-Light", ...defaultTheme.fontFamily.sans],
             },
             fontSize: {
-                "3xs": "0.3rem",
+                "3xs": "0.5rem",
             },
         },
     },

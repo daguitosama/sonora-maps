@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useParams } from "@remix-run/react";
 import { Institution } from "../lib/db/db";
 
 interface Institution_Totals_Props {
@@ -6,6 +6,8 @@ interface Institution_Totals_Props {
     className?: string;
 }
 export function InstitutionTotals({ institution, className }: Institution_Totals_Props) {
+    const params = useParams();
+    const program = params.program as string;
     return (
         <div className={"px-[10px] w-full overflow-x-auto whitespace-nowrap  " + className}>
             {/* first row */}
@@ -21,7 +23,9 @@ export function InstitutionTotals({ institution, className }: Institution_Totals
                     to='#'
                     className=' w-[82px] h-[28px] flex items-center justify-center text-black  px-2 py-1  bg-white '
                 >
-                    <p className='font-bold'>Nacional</p>
+                    <Link to={`/${program}/${institution.slug}/national`}>
+                        <p className='font-bold'>Nacional</p>
+                    </Link>
                 </Link>
             </div>
 
@@ -85,6 +89,46 @@ export function InstitutionTotals({ institution, className }: Institution_Totals
 
                 <div className=' bg-[#A7A5A6] rounded-md flex items-center justify-center w-[82px] h-[28px]'>
                     <p className='font-bold'>
+                        {institution.totals.national.egress
+                            ? institution.totals.national.egress
+                            : "-"}
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export function InstitutionTotalsNational({ institution, className }: Institution_Totals_Props) {
+    return (
+        <div className={"  grid gap-3 " + className}>
+            {/* matriculados */}
+            <div className='text-center flex flex-col items-center justify-center '>
+                <p className='text-2xl'>Matriculados</p>
+                <div className='mt-4 rounded-lg bg-[#8A2052] text-white font-bold py-3 px-20 text-3xl'>
+                    <p>
+                        {institution.totals.national.enrollment
+                            ? institution.totals.national.enrollment
+                            : "-"}
+                    </p>
+                </div>
+            </div>
+
+            <div className='text-center flex flex-col items-center justify-center'>
+                <p className='text-2xl'>Titulados</p>
+                <div className='mt-4 rounded-lg bg-[#EFA152] text-white font-bold py-3 px-20 text-3xl'>
+                    <p>
+                        {institution.totals.national.entitlements
+                            ? institution.totals.national.entitlements
+                            : "-"}
+                    </p>
+                </div>
+            </div>
+
+            <div className='text-center flex flex-col items-center justify-center'>
+                <p className='text-2xl'>Egresados</p>
+                <div className='mt-4 rounded-lg bg-[#A7A5A6] text-white font-bold py-3 px-20 text-3xl'>
+                    <p>
                         {institution.totals.national.egress
                             ? institution.totals.national.egress
                             : "-"}

@@ -33,3 +33,29 @@ export function InstitutionHeading({
         </div>
     );
 }
+
+export function InstitutionHeadingNational({
+    institution,
+    className,
+}: {
+    institution: Institution;
+    className?: string;
+}) {
+    const { logo_source } = institution;
+    return (
+        <div className={"flex items-center justify-start gap-2 px-[10px] " + className}>
+            <div>
+                <div className='rounded-full block relative'>
+                    <img
+                        src={logo_source}
+                        className=' w-[100px] drop-shadow-xl '
+                        alt=''
+                    />
+                </div>
+            </div>
+            <div className='max-w-[20rem]'>
+                <h2 className='uppercase'>{institution.name}</h2>
+            </div>
+        </div>
+    );
+}

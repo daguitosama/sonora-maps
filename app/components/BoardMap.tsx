@@ -51,6 +51,47 @@ export default function BoardMap({ map }: { map: JSX.Element }) {
     );
 }
 
+export function BoardMapNational({ map }: { map: JSX.Element }) {
+    const params = useParams();
+    const program = params.program as string;
+    const navigate = useNavigate();
+    const onClick: React.MouseEventHandler<HTMLOrSVGElement> = (event) => {
+        const element = event.target;
+        if (!element) {
+            return;
+        }
+        const institution_route = parse_pin_route(element as HTMLElement);
+        if (institution_route) {
+            navigate(`/${program}/${institution_route}`);
+        }
+    };
+    return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+        <div
+            className='h-[50vh] sm:h-[100vh] sm:w-[65vw]'
+            onClick={onClick}
+        >
+            <TransformWrapper
+                initialScale={1}
+                initialPositionY={0}
+                initialPositionX={0}
+            >
+                {(utils) => (
+                    <Fragment>
+                        <Controls {...utils} />
+                        <TransformComponent
+                            wrapperClass='w-full h-full'
+                            contentStyle={{ width: 1155, height: 928 }}
+                        >
+                            {map}
+                        </TransformComponent>
+                    </Fragment>
+                )}
+            </TransformWrapper>
+        </div>
+    );
+}
+
 const Controls = ({
     // @ts-ignore
     zoomIn,
