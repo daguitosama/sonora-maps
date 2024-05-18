@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer {
+
+    :root{
+        --rt-transition-closing-delay: 5s;
+    }
+    .tooltip-custom-container .custom-tooltip {
+        padding: 0;
+        border-radius: 12px;
+        width: max-content;
+        color: #222;
+        background-color: rgb(255, 153, 0);
+      }
+   
     /* Futura */
     @font-face {
         font-family: 'Futura-Light';

@@ -32,7 +32,7 @@ export default function Course() {
                     institution={institution}
                     course={course}
                 />
-                <BoardMap map_svg_src={institution.map} />
+                <BoardMap map={program.map} />
             </div>
         </div>
     );

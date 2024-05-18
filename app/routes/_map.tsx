@@ -27,7 +27,7 @@ function Navigation() {
                     Menú
                 </Menu.Button>
                 <Menu.Items className='absolute left-0 mt-2 p-1 flex flex-col  origin-top-right  rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none'>
-                    <Menu.Item>
+                    {/* <Menu.Item>
                         <NavLink
                             to='/'
                             className={({ isActive }) =>
@@ -38,7 +38,7 @@ function Navigation() {
                         >
                             Home
                         </NavLink>
-                    </Menu.Item>
+                    </Menu.Item> */}
 
                     <Menu.Item>
                         <NavLink

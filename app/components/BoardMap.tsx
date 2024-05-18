@@ -10,7 +10,7 @@ import { MAP_PINS_IDS } from "~/lib/db/db";
 // https://github.com/BetterTyped/react-zoom-pan-pinch/issues/130#issuecomment-902439742
 //
 
-export default function BoardMap({ map_svg_src }: { map_svg_src: string }) {
+export default function BoardMap({ map }: { map: JSX.Element }) {
     const params = useParams();
     const program = params.program as string;
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function BoardMap({ map_svg_src }: { map_svg_src: string }) {
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
-            className='h-[50vh] sm:h-[100vh] sm:w-[55vw] relative overflow-hidden'
+            className='h-[50vh] sm:h-[100vh] sm:w-[55vw]'
             onClick={onClick}
         >
             <TransformWrapper
@@ -42,11 +42,7 @@ export default function BoardMap({ map_svg_src }: { map_svg_src: string }) {
                             wrapperClass='w-full h-full'
                             contentStyle={{ width: 1155, height: 928 }}
                         >
-                            <img
-                                src={map_svg_src}
-                                className='w-full'
-                                alt=''
-                            />
+                            {map}
                         </TransformComponent>
                     </Fragment>
                 )}

@@ -1,8 +1,11 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 import tailwind_styles from "./tailwind.css?url";
-
+import react_tooltip_styles from "react-tooltip/dist/react-tooltip.css?url";
 export const links = () => {
-    return [{ rel: "stylesheet", href: tailwind_styles }];
+    return [
+        { rel: "stylesheet", href: tailwind_styles },
+        { rel: "stylesheet", href: react_tooltip_styles },
+    ];
 };
 export function Layout({ children }: { children: React.ReactNode }) {
     return (

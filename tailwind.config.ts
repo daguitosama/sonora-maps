@@ -9,6 +9,9 @@ export default {
                 sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
                 futura: ["Futura-Light", ...defaultTheme.fontFamily.sans],
             },
+            fontSize: {
+                "3xs": "0.3rem",
+            },
         },
     },
     plugins: [],

@@ -1,9 +1,9 @@
 # Tasks
 
--   [] Data Board
-    -   [] Redesign
-        -   [x] Heading
-        -   [ ] Institution Totals
+-   [] Map info tooltips
+-   [] Navigational btns local & national
+    -   [] active styles
+-   [] National View
 
 ## Notes
 

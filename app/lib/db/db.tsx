@@ -14,7 +14,6 @@ export interface Institution {
     id: string;
     slug: string;
     name: string;
-    map: string;
     logo_source: string;
     name_gradient: {
         from: string;
@@ -39,6 +38,7 @@ export interface Institution {
 export interface Program {
     title: string;
     bg_color: string;
+    map: JSX.Element;
     totals: {
         national: { enrollment: number; entitlements: number; egress: number };
         local: {

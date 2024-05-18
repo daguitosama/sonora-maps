@@ -86,9 +86,9 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
                     </div>
 
                     <div className='col-span-2 flex items-center justify-center'>
-                        <div className='bg-[#2E2120] h-[26px] w-full rounded-full '>
+                        <div className='bg-[#2E2120] h-[20px] w-full rounded-full '>
                             <div
-                                className='bg-[#892053] h-[26px] rounded-full'
+                                className='bg-[#892053] h-[20px] rounded-full'
                                 style={{
                                     width: `${Math.ceil(
                                         (current_course.totals.enrollment / folks_bar_width) * 100
@@ -106,9 +106,9 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
                     </div>
 
                     <div className='col-span-2 flex items-center justify-center'>
-                        <div className='bg-[#2E2120] h-[26px] w-full rounded-full '>
+                        <div className='bg-[#2E2120] h-[20px] w-full rounded-full '>
                             <div
-                                className='bg-[#EFA151] h-[26px] rounded-full'
+                                className='bg-[#EFA151] h-[20px] rounded-full'
                                 style={{
                                     width: `${Math.ceil(
                                         (current_course.totals.entitlements / folks_bar_width) * 100
@@ -126,9 +126,9 @@ function Carreras_Board({ institution, selected_course_idx }: Carreras_Board_Pro
                     </div>
 
                     <div className='col-span-2 flex items-center justify-center'>
-                        <div className='bg-[#2E2120] h-[26px] w-full rounded-full '>
+                        <div className='bg-[#2E2120] h-[20px] w-full rounded-full '>
                             <div
-                                className='bg-[#A7A5A6] h-[26px] rounded-full'
+                                className='bg-[#A7A5A6] h-[20px] rounded-full'
                                 style={{
                                     width: `${Math.ceil(
                                         (current_course.totals.egress / folks_bar_width) * 100
