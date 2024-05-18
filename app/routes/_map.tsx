@@ -42,7 +42,7 @@ function Navigation() {
 
                     <Menu.Item>
                         <NavLink
-                            to='/doctorados/sonora/'
+                            to='/doctorados/hermosillo/'
                             className={({ isActive }) =>
                                 isActive
                                     ? "ring-2 ring-white text-white  " +
